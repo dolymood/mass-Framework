@@ -1,4 +1,4 @@
-define("hashchange", ["$event"], function(){
+define("hashchange", ["$event"], function($){
     $.log("已加载hashchange模块")
 
     var hashchange = 'hashchange',  DOC = document,  documentMode = DOC.documentMode,
@@ -45,7 +45,7 @@ define("hashchange", ["$event"], function(){
             }
         }
         var last_hash = getHash(), history_hash, hash = "#";
-        $.eventAdapter[ hashchange ] = {
+        $.event.special[ hashchange ] = {
             setup: function(desc) {
                 $.require("ready", function(){
                     if (!iframe) {
@@ -84,7 +84,7 @@ define("hashchange", ["$event"], function(){
             }
         };
     }
-
+return $
 })
 
 
